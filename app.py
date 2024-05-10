@@ -1,6 +1,7 @@
-# import contacts
+import contacts_manager
 
 def app():
+  contacts = []
   while True:
     print('\nContact Manager Menu')
     print('1. Add contact')
@@ -13,7 +14,15 @@ def app():
 
     option_selected = input('Choose one option: ')
 
-    if option_selected == '0':
+    if option_selected == '1':
+      name = input('Enter a name of the contact: ')
+      phone = input('Enter a phone of the contact: ')
+      email = input('Enter an email of the contact: ')
+      contacts_manager.add_contact(contacts, name, phone, email)
+      print(f'--> The contact "{name}" was added successfully!')
+    elif option_selected == '2':
+      contacts_manager.list_contacts(contacts)
+    elif option_selected == '0':
       break
 
 app()
