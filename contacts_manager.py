@@ -11,6 +11,11 @@ def list_contacts(contacts: list):
   for index, contact in enumerate(contacts):
     print(f'{index + 1:2d}. {contact['name']:10s} | {contact['phone']:10} | {contact['email']:15s} | {contact['favorite']}')
 
+def list_favorite_contacts(contacts: list):
+  for index, contact in enumerate(contacts):
+    if contact['favorite'] == True:
+      print(f'{index + 1:2d}. {contact['name']:10s} | {contact['phone']:10} | {contact['email']:15s} | {contact['favorite']}')
+
 def edit_contact(contacts: list, contact_index: str, name: str, phone: str, email: str):
   adjusted_contact_index = int(contact_index) - 1
   if name:

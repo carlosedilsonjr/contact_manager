@@ -32,6 +32,8 @@ def app():
       contacts_manager.list_contacts(contacts)
       contact_index = input('Enter the number of the contact you want to favorite: ')
       contacts_manager.favorite_contact(contacts, contact_index)
+    elif option_selected == '5':
+      contacts_manager.list_favorite_contacts(contacts)
     elif option_selected == '0':
       break
 
