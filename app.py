@@ -24,13 +24,11 @@ def app():
     elif option_selected == '3':
       contacts_manager.list_contacts(contacts)
       contact_index = input('Enter the number of the contact you want to edit: ')
-
       try:
         contact_index = int(contact_index)
       except:
-        print('\nERROR: Please enter the number od contact.')
+        print('\nERROR: Please enter the number of contact.')
         continue
-
       name = input('Enter the new name of the contact or leave it blank: ')
       phone = input('Enter the new phone of the contact or leave it blank: ')
       email = input('Enter the new email of the contact or leave it blank: ')
@@ -38,6 +36,11 @@ def app():
     elif option_selected == '4':
       contacts_manager.list_contacts(contacts)
       contact_index = input('Enter the number of the contact you want to favorite: ')
+      try:
+        contact_index = int(contact_index)
+      except:
+        print('\nERROR: Please enter the number of contact.')
+        continue
       contacts_manager.favorite_contact(contacts, contact_index)
     elif option_selected == '5':
       contacts_manager.list_favorite_contacts(contacts)
