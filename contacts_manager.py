@@ -1,8 +1,12 @@
 def add_contact(contacts: list, name: str, phone: str, email: str, favorite=False):
+  if not name:
+    print(f"\nERROR: Name can't be blank.")
+    return
+
   contacts.append({
     'name': name,
-    'phone': phone,
-    'email': email,
+    'phone': phone or '-',
+    'email': email or '-',
     'favorite': favorite
   })
   print(f'--> The contact "{name}" was added successfully!')
