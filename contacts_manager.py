@@ -1,6 +1,6 @@
 def add_contact(contacts: list, name: str, phone: str, email: str, favorite=False):
   if not name:
-    print(f"\nERROR: Name can't be blank.")
+    print("\nERROR: Name can't be blank.")
     return
 
   contacts.append({
@@ -20,8 +20,13 @@ def list_favorite_contacts(contacts: list):
     if contact['favorite'] == True:
       print(f'{index + 1:2d}. {contact['name']:10s} | {contact['phone']:10} | {contact['email']:15s} | {contact['favorite']}')
 
-def edit_contact(contacts: list, contact_index: str, name: str, phone: str, email: str):
-  adjusted_contact_index = int(contact_index) - 1
+def edit_contact(contacts: list, contact_index: int, name: str, phone: str, email: str):
+  adjusted_contact_index = contact_index - 1
+
+  if adjusted_contact_index >= len(contacts):
+    print('\nERROR: Contact not found.')
+    return
+
   if name:
     contacts[adjusted_contact_index]['name'] = name
   if phone:
