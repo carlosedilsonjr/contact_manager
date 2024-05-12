@@ -49,8 +49,13 @@ def favorite_contact(contacts: list, contact_index: int):
   else:
     print(f'\n--> Contact "{contacts[adjusted_contact_index]['name']}" unmarked as favorite!')
 
-def delete_contact(contacts: list, contact_index: str):
-  adjusted_contact_index = int(contact_index) - 1
+def delete_contact(contacts: list, contact_index: int):
+  adjusted_contact_index = contact_index - 1
+
+  if adjusted_contact_index >= len(contacts):
+      print('\nERROR: Contact not found.')
+      return
+
   name = contacts[adjusted_contact_index]['name']
   contacts.remove(contacts[adjusted_contact_index])
   print(f'\n--> Contact "{name}" deleted!')

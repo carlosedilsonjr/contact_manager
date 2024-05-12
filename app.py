@@ -47,6 +47,11 @@ def app():
     elif option_selected == '6':
       contacts_manager.list_contacts(contacts)
       contact_index = input('Enter the number of the contact you want to delete: ')
+      try:
+        contact_index = int(contact_index)
+      except:
+        print('\nERROR: Please enter the number of contact.')
+        continue
       contacts_manager.delete_contact(contacts, contact_index)
     elif option_selected == '0':
       break
