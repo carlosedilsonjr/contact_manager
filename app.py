@@ -1,10 +1,7 @@
 import contacts_manager
 
 def app():
-  contacts = [
-    {'name': 'carlos', 'phone': '999469838'},
-    {'name': 'claudia', 'phone': '997402299'},
-  ]
+  contacts = []
   while True:
     print('\nContact Manager Menu')
     print('1. Add contact')
