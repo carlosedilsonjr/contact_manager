@@ -28,6 +28,10 @@ def app():
       phone = input('Enter the new phone of the contact or leave it blank: ')
       email = input('Enter the new email of the contact or leave it blank: ')
       contacts_manager.edit_contact(contacts, contact_index, name, phone, email)
+    elif option_selected == '4':
+      contacts_manager.list_contacts(contacts)
+      contact_index = input('Enter the number of the contact you want to favorite: ')
+      contacts_manager.favorite_contact(contacts, contact_index)
     elif option_selected == '0':
       break
 

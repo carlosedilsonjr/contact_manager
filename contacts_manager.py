@@ -20,4 +20,11 @@ def edit_contact(contacts: list, contact_index: str, name: str, phone: str, emai
   if email:
     contacts[adjusted_contact_index]['email'] = email
   print(f'\n--> Contact "{contacts[adjusted_contact_index]['name']}" was updated successfully!')
-  
+
+def favorite_contact(contacts: list, contact_index: str):
+  adjusted_contact_index = int(contact_index) - 1
+  contacts[adjusted_contact_index]['favorite'] = not contacts[adjusted_contact_index]['favorite']
+  if contacts[adjusted_contact_index]['favorite']:
+    print(f'\n--> Contact "{contacts[adjusted_contact_index]['name']}" marked as favorite!')
+  else:
+    print(f'\n--> Contact "{contacts[adjusted_contact_index]['name']}" unmarked as favorite!')
